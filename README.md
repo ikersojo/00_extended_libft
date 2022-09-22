@@ -10,6 +10,7 @@ A modified version of lift project, to be used in other projects.
 
 ## Additional main functions
 - ft_printf
+- ft_gnl (get_next_line)
 
 ## Additional auxiliary functions
 - ft_isspace: checks if a character is a space (extracted from atoi).
@@ -19,3 +20,4 @@ A modified version of lift project, to be used in other projects.
 - ft_putunbr_fd: outputs the unsigned integer n to the file descriptor fd.
 - ft_putuhexnbr_fd: outputs the unisgned integer n to the file descriptor fd in hexadecimal.
 - ft_putuhexlongnbr_fd: outputs the unisgned long n to the file descriptor fd in hexadecimal.
+- ft_isline: test for a new line character in a string (extracted from gnl).

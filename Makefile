@@ -6,7 +6,7 @@
 #    By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/09 15:28:36 by isojo-go          #+#    #+#              #
-#    Updated: 2022/09/22 08:13:28 by isojo-go         ###   ########.fr        #
+#    Updated: 2022/09/22 11:15:56 by isojo-go         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ RM			=	rm -f
 
 SRC_FILES	=	ft_is/ft_isalnum.c ft_is/ft_isalpha.c ft_is/ft_isascii.c \
 				ft_is/ft_isdigit.c ft_is/ft_isprint.c ft_is/ft_isspace.c \
-				ft_is/ft_ischarset.c \
+				ft_is/ft_ischarset.c ft_is/ft_isline.c \
 				ft_lst/ft_lstnew_bonus.c ft_lst/ft_lstadd_front_bonus.c \
 				ft_lst/ft_lstsize_bonus.c ft_lst/ft_lstlast_bonus.c \
 				ft_lst/ft_lstadd_back_bonus.c ft_lst/ft_lstdelone_bonus.c \
@@ -45,7 +45,8 @@ SRC_FILES	=	ft_is/ft_isalnum.c ft_is/ft_isalpha.c ft_is/ft_isascii.c \
 				ft_str/ft_strtrim.c ft_str/ft_substr.c \
 				ft_to/ft_abs.c ft_to/ft_atoi.c ft_to/ft_itoa.c \
 				ft_to/ft_toupper.c ft_to/ft_tolower.c \
-				ft_printf/ft_printf.c
+				ft_printf/ft_printf.c \
+				ft_gnl/ft_gnl.c
 
 SRC	=	$(addprefix $(SRC_DIR), $(SRC_FILES))
 OBJ	=	$(SRC:.c=.o)

@@ -23,6 +23,7 @@ int		ft_isalpha(char c);
 int		ft_isascii(char c);
 int		ft_ischarset(char c, const char *set);
 int		ft_isdigit(char c);
+int		ft_isline(char *str);
 int		ft_isprint(char c);
 int		ft_isspace(int c);
 
@@ -82,5 +83,6 @@ int		ft_tolower(int c);
 int		ft_toupper(int c);
 
 int		ft_printf(const char *str, ...);
+char	*ft_gnl(int fd);
 
 #endif
