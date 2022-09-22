@@ -6,24 +6,11 @@
 /*   By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 15:20:53 by isojo-go          #+#    #+#             */
-/*   Updated: 2022/09/20 13:09:47 by isojo-go         ###   ########.fr       */
+/*   Updated: 2022/09/22 08:19:47 by isojo-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/libft.h"
-
-static int	ft_digitcount(int n)
-{
-	int	count;
-
-	count = 0;
-	while (n > 0)
-	{
-		count++;
-		n = n / 10;
-	}
-	return (count);
-}
 
 static char	*min_int_str(void)
 {
@@ -55,7 +42,7 @@ static void	ft_initialize(int *sign, int *digits, int *n)
 		*sign = 1;
 		*n = *n * -1;
 	}
-	*digits = ft_digitcount(*n) + *sign;
+	*digits = ft_digitcount(*n, 10) + *sign;
 }
 
 /* DESCRIPTION:

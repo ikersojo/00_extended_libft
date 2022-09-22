@@ -16,9 +16,9 @@
 Outputs the string s to the file descriptor fd followed by a ’\n’.
 The function returns the number of characters printed.
 ---------------------------------------------------------------------------- */
-size_t	ft_putendl_fd(char *s, int fd)
+int	ft_putendl_fd(char *s, int fd)
 {
-	size_t	i;
+	int	i;
 
 	i = ft_putstr_fd(s, fd);
 	ft_putchar_fd('\n', fd);

@@ -14,13 +14,23 @@
 
 /* DESCRIPTION:
 Outputs the string s to the file descriptor fd.
+The function returns the number of characters printed and -1 if fails to print.
 ---------------------------------------------------------------------------- */
-size_t	ft_putstr_fd(char *s, int fd)
+int	ft_putstr_fd(char *s, int fd)
 {
-	size_t	i;
+	int	i;
+	int	temp;
 
 	i = 0;
-	while (*(s + i))
-		ft_putchar_fd(*(s + i++), fd);
+	temp = 0;
+	if (s == NULL)
+		return (write(fd, "(null)", 6));
+	while (*s)
+	{
+		temp = ft_putchar_fd(*s++, fd);
+		if (temp == -1)
+			return (-1);
+		i += temp;
+	}
 	return (i);
 }

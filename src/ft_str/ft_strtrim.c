@@ -6,25 +6,11 @@
 /*   By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 15:27:28 by isojo-go          #+#    #+#             */
-/*   Updated: 2022/09/20 13:09:47 by isojo-go         ###   ########.fr       */
+/*   Updated: 2022/09/22 07:54:32 by isojo-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/libft.h"
-
-static int	ft_ischarset(char c, const char *set)
-{
-	size_t	i;
-
-	i = 0;
-	while (*(set + i))
-	{
-		if (*(set + i) == c)
-			return (1);
-		i++;
-	}
-	return (0);
-}
 
 /* DESCRIPTION:
 Allocates (with malloc(3)) and returns a copy of the string given as argument

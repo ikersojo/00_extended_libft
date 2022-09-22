@@ -14,10 +14,9 @@
 
 /* DESCRIPTION:
 Outputs the char c to the file descriptor fd.
-The function returns the number of characters printed.
+The function returns the number of characters printed and -1 if fails to print.
 ---------------------------------------------------------------------------- */
-size_t	ft_putchar_fd(int c, int fd)
+int	ft_putchar_fd(int c, int fd)
 {
-	write(fd, &c, 1);
-	return (1);
+	return (write(fd, &c, 1));
 }
