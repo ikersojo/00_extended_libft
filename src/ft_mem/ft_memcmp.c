@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/libft.h"
+#include "libft.h"
 
 /* DESCRIPTION:
 The memcmp() function compares the first n bytes (each interpreted as unsigned

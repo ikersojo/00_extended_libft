@@ -6,11 +6,11 @@
 /*   By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 07:38:26 by isojo-go          #+#    #+#             */
-/*   Updated: 2022/09/22 07:39:47 by isojo-go         ###   ########.fr       */
+/*   Updated: 2022/09/22 08:57:04 by isojo-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/libft.h"
+#include "libft.h"
 
 /* DESCRIPTION:
 Outputs the unisgned long n to the file descriptor fd in hexadecimal.

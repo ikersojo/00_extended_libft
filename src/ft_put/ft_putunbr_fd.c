@@ -6,11 +6,11 @@
 /*   By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 07:32:50 by isojo-go          #+#    #+#             */
-/*   Updated: 2022/09/22 07:37:33 by isojo-go         ###   ########.fr       */
+/*   Updated: 2022/09/22 08:57:04 by isojo-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/libft.h"
+#include "libft.h"
 
 /* DESCRIPTION:
 Outputs the unsigned integer n to the file descriptor fd.

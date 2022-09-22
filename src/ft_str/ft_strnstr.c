@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/libft.h"
+#include "libft.h"
 
 /* DESCRIPTION:
 The strnstr() function locates the first occurrence of null-terminated string

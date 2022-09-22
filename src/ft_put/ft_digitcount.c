@@ -6,11 +6,11 @@
 /*   By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 07:25:59 by isojo-go          #+#    #+#             */
-/*   Updated: 2022/09/22 07:37:33 by isojo-go         ###   ########.fr       */
+/*   Updated: 2022/09/22 08:57:04 by isojo-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/libft.h"
+#include "libft.h"
 
 /* DESCRIPTION:
 The function returns the number of digits in an unsigned long in a given
