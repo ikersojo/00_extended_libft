@@ -1,9 +1,16 @@
 # 00_extended_libft
 A modified version of lift project, to be used in other projects.
+```console
+             w                  8          8    8 w 8     d8b  w   
+.d88b Yb dP w8ww .d88b 8d8b. .d88 .d88b .d88    8 w 88b.  8'  w8ww 
+8.dP'  `8.   8   8.dP' 8P Y8 8  8 8.dP' 8  8    8 8 8  8 w8ww  8   
+`Y88P dP Yb  Y8P `Y88P 8   8 `Y88 `Y88P `Y88    8 8 88P'  8    Y8P 
+                                                                   
+```
 
 ## Changes over regular libft
 - Modified source file structure.
-- ft_put functions return the number of characters printed as int or -1 if fail.
+- ft_put functions return the number of characters printed as int.
 - ft_substr is modified to return NULL when len is = 0 instead of an empty string
 - ft_substr is modified to return NULL when the starting point is higher than the length of the string
 - Bonus removed as an alternative compilation option (all included in the main libft)
@@ -19,5 +26,4 @@ A modified version of lift project, to be used in other projects.
 - ft_digitcount: returns the number of digits in an unsigned long in a given base length (extracted from itoa and modified with base length as argument).
 - ft_putunbr_fd: outputs the unsigned integer n to the file descriptor fd.
 - ft_putuhexnbr_fd: outputs the unisgned integer n to the file descriptor fd in hexadecimal.
-- ft_putuhexlongnbr_fd: outputs the unisgned long n to the file descriptor fd in hexadecimal.
 - ft_isline: test for a new line character in a string (extracted from gnl).

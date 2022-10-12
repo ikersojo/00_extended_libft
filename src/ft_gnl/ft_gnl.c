@@ -6,11 +6,11 @@
 /*   By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 21:38:02 by isojo-go          #+#    #+#             */
-/*   Updated: 2022/09/22 11:15:25 by isojo-go         ###   ########.fr       */
+/*   Updated: 2022/10/12 11:02:11 by isojo-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../inc/libft.h"
 
 #define FD_LIMIT 1024
 #ifndef BUFFER_SIZE

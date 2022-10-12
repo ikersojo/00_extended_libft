@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/09 15:28:15 by isojo-go          #+#    #+#             */
-/*   Updated: 2022/09/09 15:28:15 by isojo-go         ###   ########.fr       */
+/*   Created: 2022/10/12 10:55:39 by isojo-go          #+#    #+#             */
+/*   Updated: 2022/10/12 10:55:43 by isojo-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,12 +54,9 @@ void	*ft_memset(void *b, int c, size_t len);
 
 int		ft_putchar_fd(int c, int fd);
 int		ft_putstr_fd(char *s, int fd);
-int		ft_putendl_fd(char *s, int fd);
-int		ft_digitcount(unsigned long n, int base);
 int		ft_putnbr_fd(int n, int fd);
 int		ft_putunbr_fd(unsigned int n, int fd);
-int		ft_putuhexnbr_fd(unsigned int n, int fd, char cs);
-int		ft_putuhexlongnbr_fd(unsigned long n, int fd, char cs);
+int		ft_putuhexnbr_fd(size_t n, int fd, char cs);
 
 char	**ft_split(const char *s, char c);
 char	*ft_strchr(const char *s, int c);
@@ -81,6 +78,7 @@ int		ft_atoi(const char *str);
 char	*ft_itoa(int n);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
+int		ft_digitcount(unsigned long n, int base);
 
 int		ft_printf(const char *str, ...);
 char	*ft_gnl(int fd);

@@ -6,7 +6,7 @@
 #    By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/09 15:28:36 by isojo-go          #+#    #+#              #
-#    Updated: 2022/09/22 11:15:56 by isojo-go         ###   ########.fr        #
+#    Updated: 2022/10/12 11:02:11 by isojo-go         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,17 +34,16 @@ SRC_FILES	=	ft_is/ft_isalnum.c ft_is/ft_isalpha.c ft_is/ft_isascii.c \
 				ft_mem/ft_bzero.c ft_mem/ft_calloc.c ft_mem/ft_memccpy.c \
 				ft_mem/ft_memchr.c ft_mem/ft_memcmp.c ft_mem/ft_memcpy.c \
 				ft_mem/ft_memmove.c ft_mem/ft_memset.c \
-				ft_put/ft_putchar_fd.c ft_put/ft_putendl_fd.c \
+				ft_put/ft_putchar_fd.c ft_put/ft_putunbr_fd.c \
 				ft_put/ft_putnbr_fd.c ft_put/ft_putstr_fd.c \
-				ft_put/ft_digitcount.c ft_put/ft_putunbr_fd.c \
-				ft_put/ft_putuhexnbr_fd.c ft_put/ft_putuhexlongnbr_fd.c \
+				ft_put/ft_putuhexnbr_fd.c \
 				ft_str/ft_split.c ft_str/ft_strchr.c ft_str/ft_strdup.c \
 				ft_str/ft_striteri.c ft_str/ft_strjoin.c ft_str/ft_strlcat.c \
 				ft_str/ft_strlcpy.c ft_str/ft_strlen.c ft_str/ft_strmapi.c \
 				ft_str/ft_strncmp.c ft_str/ft_strnstr.c ft_str/ft_strrchr.c \
 				ft_str/ft_strtrim.c ft_str/ft_substr.c \
 				ft_to/ft_abs.c ft_to/ft_atoi.c ft_to/ft_itoa.c \
-				ft_to/ft_toupper.c ft_to/ft_tolower.c \
+				ft_to/ft_toupper.c ft_to/ft_tolower.c ft_to/ft_digitcount.c\
 				ft_printf/ft_printf.c \
 				ft_gnl/ft_gnl.c
 
@@ -70,7 +69,13 @@ all:		$(NAME)
 
 $(NAME):	$(OBJ)
 			@$(AR) $(NAME) $(OBJ)
-			@echo "$(GREEN)Libft compiled!$(DEF_COLOR)"
+			@echo "$(GREEN)extended libft compiled!$(DEF_COLOR)"
+			@echo "$(CYAN)             w                  8          8    8 w 8     d8b  w   "
+			@echo ".d88b Yb dP w8ww .d88b 8d8b. .d88 .d88b .d88    8 w 88b.  8'  w8ww "
+			@echo "8.dP'  \`8.   8   8.dP' 8P Y8 8  8 8.dP' 8  8    8 8 8  8 w8ww  8   "
+			@echo "\`Y88P dP Yb  Y8P \`Y88P 8   8 \`Y88 \`Y88P \`Y88    8 8 88P'  8    Y8P "
+			@echo "                                                               $(DEF_COLOR)"
+
 .c.o:
 			@echo "$(BLUE)Compiling: $< $(DEF_COLOR)"
 			@$(CC) $(CCFLAGS) -I$(INCLUDES) -c $< -o $(<:.c=.o)
