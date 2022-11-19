@@ -1,39 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_intlst_before_last.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/09 15:26:06 by isojo-go          #+#    #+#             */
-/*   Updated: 2022/11/18 16:12:51 by isojo-go         ###   ########.fr       */
+/*   Created: 2022/10/23 10:19:42 by isojo-go          #+#    #+#             */
+/*   Updated: 2022/10/23 10:26:31 by isojo-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/libft.h"
 
 /* DESCRIPTION:
-Allocates (with malloc(3)) and returns a new string ending with ’\0’, result of
-the concatenation of s1 and s2. If the allocation fails returns NULL.
+Takes as a parameter a pointer to the first element of an integer list and
+returns the element before the last of the list.
 ---------------------------------------------------------------------------- */
-char	*ft_strjoin(const char *s1, const char *s2)
-{
-	size_t	i;
-	size_t	j;
-	char	*join;
 
-	join = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
-	if (join == NULL)
+t_intlst	*ft_intlst_before_last(t_intlst *lst)
+{
+	if (lst == NULL)
 		return (NULL);
-	i = 0;
-	while (*(s1 + i))
-	{
-		*(join + i) = *(s1 + i);
-		i++;
-	}
-	j = 0;
-	while (*(s2 + j))
-		*(join + i++) = *(s2 + j++);
-	*(join + i) = '\0';
-	return (join);
+	while (lst->next->next)
+		lst = lst->next;
+	return (lst);
 }

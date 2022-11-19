@@ -1,39 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_intlst_addfront.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/09 15:26:06 by isojo-go          #+#    #+#             */
-/*   Updated: 2022/11/18 16:12:51 by isojo-go         ###   ########.fr       */
+/*   Created: 2022/10/20 16:48:42 by isojo-go          #+#    #+#             */
+/*   Updated: 2022/10/20 17:13:43 by isojo-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/libft.h"
 
 /* DESCRIPTION:
-Allocates (with malloc(3)) and returns a new string ending with ’\0’, result of
-the concatenation of s1 and s2. If the allocation fails returns NULL.
+Takes as a parameter the adress of a pointer to the first element of a list of
+integers and adds the element new at the top of the list.
 ---------------------------------------------------------------------------- */
-char	*ft_strjoin(const char *s1, const char *s2)
+void	ft_intlst_addfront(t_intlst **lst, t_intlst *new)
 {
-	size_t	i;
-	size_t	j;
-	char	*join;
-
-	join = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
-	if (join == NULL)
-		return (NULL);
-	i = 0;
-	while (*(s1 + i))
-	{
-		*(join + i) = *(s1 + i);
-		i++;
-	}
-	j = 0;
-	while (*(s2 + j))
-		*(join + i++) = *(s2 + j++);
-	*(join + i) = '\0';
-	return (join);
+	if (new && *lst)
+		new->next = *lst;
+	else if (new)
+		new->next = NULL;
+	*lst = new;
 }

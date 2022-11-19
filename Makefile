@@ -6,7 +6,7 @@
 #    By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/09 15:28:36 by isojo-go          #+#    #+#              #
-#    Updated: 2022/10/12 11:02:11 by isojo-go         ###   ########.fr        #
+#    Updated: 2022/11/18 22:49:05 by isojo-go         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,12 +25,13 @@ RM			=	rm -f
 
 SRC_FILES	=	ft_is/ft_isalnum.c ft_is/ft_isalpha.c ft_is/ft_isascii.c \
 				ft_is/ft_isdigit.c ft_is/ft_isprint.c ft_is/ft_isspace.c \
-				ft_is/ft_ischarset.c ft_is/ft_isline.c \
-				ft_lst/ft_lstnew_bonus.c ft_lst/ft_lstadd_front_bonus.c \
-				ft_lst/ft_lstsize_bonus.c ft_lst/ft_lstlast_bonus.c \
-				ft_lst/ft_lstadd_back_bonus.c ft_lst/ft_lstdelone_bonus.c \
-				ft_lst/ft_lstclear_bonus.c ft_lst/ft_lstiter_bonus.c \
-				ft_lst/ft_lstmap_bonus.c \
+				ft_is/ft_ischarset.c ft_is/ft_isline.c ft_is/ft_isint.c \
+				ft_is/ft_is_samesign.c \
+				ft_lst/ft_lstnew.c ft_lst/ft_lstadd_front.c \
+				ft_lst/ft_lstsize.c ft_lst/ft_lstlast.c \
+				ft_lst/ft_lstadd_back.c ft_lst/ft_lstdelone.c \
+				ft_lst/ft_lstclear.c ft_lst/ft_lstiter.c \
+				ft_lst/ft_lstmap.c \
 				ft_mem/ft_bzero.c ft_mem/ft_calloc.c ft_mem/ft_memccpy.c \
 				ft_mem/ft_memchr.c ft_mem/ft_memcmp.c ft_mem/ft_memcpy.c \
 				ft_mem/ft_memmove.c ft_mem/ft_memset.c \
@@ -41,11 +42,18 @@ SRC_FILES	=	ft_is/ft_isalnum.c ft_is/ft_isalpha.c ft_is/ft_isascii.c \
 				ft_str/ft_striteri.c ft_str/ft_strjoin.c ft_str/ft_strlcat.c \
 				ft_str/ft_strlcpy.c ft_str/ft_strlen.c ft_str/ft_strmapi.c \
 				ft_str/ft_strncmp.c ft_str/ft_strnstr.c ft_str/ft_strrchr.c \
-				ft_str/ft_strtrim.c ft_str/ft_substr.c \
-				ft_to/ft_abs.c ft_to/ft_atoi.c ft_to/ft_itoa.c \
+				ft_str/ft_strtrim.c ft_str/ft_substr.c ft_str/ft_strcat.c \
+				ft_to/ft_abs.c ft_to/ft_atoi.c ft_to/ft_itoa.c ft_to/ft_max.c \
 				ft_to/ft_toupper.c ft_to/ft_tolower.c ft_to/ft_digitcount.c\
 				ft_printf/ft_printf.c \
-				ft_gnl/ft_gnl.c
+				ft_gnl/ft_gnl.c \
+				ft_intlst/ft_args_to_intlst.c ft_intlst/ft_intlst_addback.c \
+				ft_intlst/ft_intlst_free.c ft_intlst/ft_intlst_last.c \
+				ft_intlst/ft_intlst_new.c ft_intlst/ft_intlst_print.c \
+				ft_intlst/ft_intlst_before_last.c \
+				ft_intlst/ft_intlst_issorted.c ft_intlst/ft_intlst_minval.c\
+				ft_intlst/ft_intlst_maxval.c ft_intlst/ft_intlst_size.c \
+				ft_intlst/ft_intlst_isrevsorted.c
 
 SRC	=	$(addprefix $(SRC_DIR), $(SRC_FILES))
 OBJ	=	$(SRC:.c=.o)

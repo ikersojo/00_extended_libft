@@ -14,6 +14,10 @@ A modified version of lift project, to be used in other projects.
 - ft_substr is modified to return NULL when len is = 0 instead of an empty string
 - ft_substr is modified to return NULL when the starting point is higher than the length of the string
 - Bonus removed as an alternative compilation option (all included in the main libft)
+- Included useful functions (both main and auxiliary) and variable types from other projects.
+
+## Additional variable types:
+- t_intlst: a linked list of signed integers.
 
 ## Additional main functions
 - ft_printf
@@ -27,3 +31,8 @@ A modified version of lift project, to be used in other projects.
 - ft_putunbr_fd: outputs the unsigned integer n to the file descriptor fd.
 - ft_putuhexnbr_fd: outputs the unisgned integer n to the file descriptor fd in hexadecimal.
 - ft_isline: test for a new line character in a string (extracted from gnl).
+- ft_is_samesign: (extracted from push_swap).
+- ft_is_int: checks if a string is a vallid int (syntax and max/min values) (extracted from push_swap).
+- ft_strcat: replicates strcat (extracted from push_swap).
+- ft_max: compares two signed integers and provides tha one with the highest value (extracted from push_swap).
+- ft_intlst_*: a set of auxiliary functions to work with t_intlst variable type.(extracted from push_swap).

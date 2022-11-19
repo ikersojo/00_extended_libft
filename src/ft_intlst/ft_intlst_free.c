@@ -1,39 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_intlst_free.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/09 15:26:06 by isojo-go          #+#    #+#             */
-/*   Updated: 2022/11/18 16:12:51 by isojo-go         ###   ########.fr       */
+/*   Created: 2022/10/15 22:20:13 by isojo-go          #+#    #+#             */
+/*   Updated: 2022/10/16 10:54:13 by isojo-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/libft.h"
+#include <stdio.h>
 
 /* DESCRIPTION:
-Allocates (with malloc(3)) and returns a new string ending with ’\0’, result of
-the concatenation of s1 and s2. If the allocation fails returns NULL.
+Takes as a parameter the adress of a pointer to the first element of a list of
+integers and frees all elements of the list.
 ---------------------------------------------------------------------------- */
-char	*ft_strjoin(const char *s1, const char *s2)
+void	ft_intlst_free(t_intlst **lst)
 {
-	size_t	i;
-	size_t	j;
-	char	*join;
+	t_intlst	*tmp;
 
-	join = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
-	if (join == NULL)
-		return (NULL);
-	i = 0;
-	while (*(s1 + i))
+	while (*lst)
 	{
-		*(join + i) = *(s1 + i);
-		i++;
+		tmp = *lst;
+		*lst = (*lst)->next;
+		free(tmp);
 	}
-	j = 0;
-	while (*(s2 + j))
-		*(join + i++) = *(s2 + j++);
-	*(join + i) = '\0';
-	return (join);
 }

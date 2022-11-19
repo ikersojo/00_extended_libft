@@ -1,39 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_intlst_minval.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/09 15:26:06 by isojo-go          #+#    #+#             */
-/*   Updated: 2022/11/18 16:12:51 by isojo-go         ###   ########.fr       */
+/*   Created: 2022/10/29 16:43:24 by isojo-go          #+#    #+#             */
+/*   Updated: 2022/10/29 17:48:41 by isojo-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/libft.h"
 
 /* DESCRIPTION:
-Allocates (with malloc(3)) and returns a new string ending with ’\0’, result of
-the concatenation of s1 and s2. If the allocation fails returns NULL.
+Takes as a parameter the adress of the first element of a list of integers and
+returns the minimum value in the list.
 ---------------------------------------------------------------------------- */
-char	*ft_strjoin(const char *s1, const char *s2)
+int	ft_intlst_minval(t_intlst *lst)
 {
-	size_t	i;
-	size_t	j;
-	char	*join;
+	int	min;
 
-	join = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
-	if (join == NULL)
-		return (NULL);
-	i = 0;
-	while (*(s1 + i))
+	if (lst)
 	{
-		*(join + i) = *(s1 + i);
-		i++;
+		min = 2147483647;
+		while (lst)
+		{
+			if (lst->value < min)
+				min = lst->value;
+			lst = lst->next;
+		}
+		return (min);
 	}
-	j = 0;
-	while (*(s2 + j))
-		*(join + i++) = *(s2 + j++);
-	*(join + i) = '\0';
-	return (join);
+	return (0);
 }

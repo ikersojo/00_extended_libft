@@ -1,39 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_args_to_intlst.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/09 15:26:06 by isojo-go          #+#    #+#             */
-/*   Updated: 2022/11/18 16:12:51 by isojo-go         ###   ########.fr       */
+/*   Created: 2022/10/15 22:20:18 by isojo-go          #+#    #+#             */
+/*   Updated: 2022/11/19 09:34:06 by isojo-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/libft.h"
 
 /* DESCRIPTION:
-Allocates (with malloc(3)) and returns a new string ending with ’\0’, result of
-the concatenation of s1 and s2. If the allocation fails returns NULL.
+Takes as parameters the arguments provided to main and creates a new list of
+integers. Returns a pointer to the first item of the newly created list.
+It does not handle input errors.
 ---------------------------------------------------------------------------- */
-char	*ft_strjoin(const char *s1, const char *s2)
+t_intlst	*ft_args_to_intlst(int argc, char **argv)
 {
-	size_t	i;
-	size_t	j;
-	char	*join;
+	int			i;
+	t_intlst	*a;
+	t_intlst	*tmp;
 
-	join = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
-	if (join == NULL)
-		return (NULL);
-	i = 0;
-	while (*(s1 + i))
+	i = 1;
+	while (i < argc)
 	{
-		*(join + i) = *(s1 + i);
+		if (i == 1)
+			a = ft_intlst_new(ft_atoi((*(argv + i))));
+		else
+		{
+			tmp = ft_intlst_new(ft_atoi((*(argv + i))));
+			ft_intlst_addback(&a, tmp);
+		}
 		i++;
 	}
-	j = 0;
-	while (*(s2 + j))
-		*(join + i++) = *(s2 + j++);
-	*(join + i) = '\0';
-	return (join);
+	return (a);
 }
