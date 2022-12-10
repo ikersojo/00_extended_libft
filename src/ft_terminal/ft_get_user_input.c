@@ -1,38 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_args_to_intlst.c                                :+:      :+:    :+:   */
+/*   ft_get_user_input.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/15 22:20:18 by isojo-go          #+#    #+#             */
-/*   Updated: 2022/10/15 22:45:37 by isojo-go         ###   ########.fr       */
+/*   Created: 2022/12/10 20:03:30 by isojo-go          #+#    #+#             */
+/*   Updated: 2022/12/10 20:10:15 by isojo-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/libft.h"
 
 /* DESCRIPTION:
-Takes as parameters the arguments provided to main and creates a new list of
-integers. Returns a pointer to the first item of the newly created list.
+Promts the user with str, and returns the user input from STDIN as string.
+The user escape character is a new line (ENTER KEY PRESS).
+The string returned is allocated with malloc and must be freed.
 ---------------------------------------------------------------------------- */
-t_intlst	*ft_args_to_intlst(int argc, char **argv)
+char	*ft_get_user_input(char *str)
 {
-	int			i;
-	t_intlst	*a;
-	t_intlst	*tmp;
+	char	c;
+	int		bytes;
+	char	*line;
+	int		i;
 
-	i = 1;
-	while (i < argc)
+	ft_putstr_fd(str, 1);
+	line = (char *)malloc(400);
+	bytes = read(0, &c, 1);
+	i = 0;
+	while (bytes > 0 && c != '\0' && i < 395)
 	{
-		if (i == 1)
-			a = ft_intlst_new(ft_atoi((*(argv + i))));
-		else
-		{
-			tmp = ft_intlst_new(ft_atoi((*(argv + i))));
-			ft_intlst_addback(&a, tmp);
-		}
-		i++;
+		*(line + i++) = c;
+		if (c == '\n')
+			break ;
+		bytes = read(0, &c, 1);
 	}
-	return (a);
+	*(line + i) = '\0';
+	return (line);
 }

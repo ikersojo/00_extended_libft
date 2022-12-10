@@ -1,38 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_args_to_intlst.c                                :+:      :+:    :+:   */
+/*   ft_exit_w_error.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/15 22:20:18 by isojo-go          #+#    #+#             */
-/*   Updated: 2022/10/15 22:45:37 by isojo-go         ###   ########.fr       */
+/*   Created: 2022/12/10 19:31:25 by isojo-go          #+#    #+#             */
+/*   Updated: 2022/12/10 19:58:18 by isojo-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/libft.h"
 
 /* DESCRIPTION:
-Takes as parameters the arguments provided to main and creates a new list of
-integers. Returns a pointer to the first item of the newly created list.
+Exits the program, outputting a string with the details on the error to STDOUT.
+If str is "errno" the default description of error is displayed. Else, the
+custom str will be used as description of the error.
 ---------------------------------------------------------------------------- */
-t_intlst	*ft_args_to_intlst(int argc, char **argv)
+void	ft_exit_w_error(char *str)
 {
-	int			i;
-	t_intlst	*a;
-	t_intlst	*tmp;
-
-	i = 1;
-	while (i < argc)
+	if (ft_strcmp("errno", str) == 0)
 	{
-		if (i == 1)
-			a = ft_intlst_new(ft_atoi((*(argv + i))));
-		else
-		{
-			tmp = ft_intlst_new(ft_atoi((*(argv + i))));
-			ft_intlst_addback(&a, tmp);
-		}
-		i++;
+		perror("\033[31mError");
+		ft_putstr_fd("\033[0;39m", 2);
 	}
-	return (a);
+	else
+	{
+		ft_putstr_fd("\033[31mError: ", 2);
+		ft_putstr_fd(str, 2);
+		ft_putstr_fd("\033[0;39m", 2);
+	}
+	exit(EXIT_FAILURE);
 }

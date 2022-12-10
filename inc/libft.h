@@ -6,20 +6,21 @@
 /*   By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 10:55:39 by isojo-go          #+#    #+#             */
-/*   Updated: 2022/11/19 09:34:06 by isojo-go         ###   ########.fr       */
+/*   Updated: 2022/12/10 20:10:42 by isojo-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# define MAX_INT 2147483647
-# define MIN_INT -2147483648
+# define RED "\033[0;31m"
+# define GREEN "\033[0;92m"
 
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
 # include <stdarg.h>
+# include <stdio.h>
 
 typedef struct s_list
 {
@@ -84,6 +85,7 @@ char		*ft_strrchr(const char *s, int c);
 char		*ft_strtrim(const char *s1, const char *set);
 char		*ft_substr(const char *s, unsigned int start, size_t len);
 char		*ft_strcat(char *dest, const char *src);
+int			ft_strcmp(const char *s1, const char *s2);
 
 int			ft_abs(int n);
 int			ft_atoi(const char *str);
@@ -108,5 +110,9 @@ int			ft_intlst_isrevsorted(t_intlst *lst);
 int			ft_intlst_minval(t_intlst *lst);
 int			ft_intlst_maxval(t_intlst *lst);
 size_t		ft_intlst_size(t_intlst *lst);
+
+void		ft_exit_w_error(char *str);
+void		ft_run_command(char *str, char **envp);
+char		*ft_get_user_input(char *str);
 
 #endif
