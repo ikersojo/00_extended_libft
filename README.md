@@ -36,3 +36,6 @@ A modified version of lift project, to be used in other projects.
 - ft_strcat: replicates strcat (extracted from push_swap).
 - ft_max: compares two signed integers and provides tha one with the highest value (extracted from push_swap).
 - ft_intlst_*: a set of auxiliary functions to work with t_intlst variable type.(extracted from push_swap).
+- ft_get_user_input: promts the user for input, similar to scanf (extracted from pipex)
+- ft_run_cmd: executes a command using a string typed as in the terminal, including args (e.g. "ls -lap") (extracted from pipex)
+- ft_exit_w_error: exits with perror and errno or custom error message (extracted from pipex)
