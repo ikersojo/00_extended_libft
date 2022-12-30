@@ -39,3 +39,6 @@ A modified version of lift project, to be used in other projects.
 - ft_get_user_input: promts the user for input, similar to scanf (extracted from pipex)
 - ft_run_cmd: executes a command using a string typed as in the terminal, including args (e.g. "ls -lap") (extracted from pipex)
 - ft_exit_w_error: exits with perror and errno or custom error message (extracted from pipex)
+- ft_chars_valid: checks if all the characters in string str are contained in the string valid_chars
+- ft_count_chars: Returns the number of instances of c in str.
+- ft_ext_ok: Checks if the file extension of the filename provided is the provided one or not.
